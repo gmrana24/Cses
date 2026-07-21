@@ -9,27 +9,19 @@ using namespace std;
 void solve() {
   int n;
   cin >> n;
-  if (n == 1) {
-    cout << 1 << endl;
-  } else if (n < 4) {
-    cout << "NO SOLUTION" << endl;
-  } else {
-    int even, odd;
-    if (n & 1) {
-      odd = n;
-      even = odd - 1;
-    } else {
-      even = n;
-      odd = even - 1;
-    }
-    for (int i = odd; i > 0; i -= 2) {
-			cout << i << " ";
-    }
-    for (int i = even; i > 0; i -= 2) {
-			cout << i <<  " ";
-    }
-		cout << endl;
+  if (n < 4) {
+    if (n == 1)
+      cout << 1;
+    else
+      cout << "NO SOLUTION";
+    cout << endl;
+    return;
   }
+  for (int i = 2; i <= n; i += 2)
+    cout << i << " ";
+  for (int i = 1; i <= n; i += 2)
+    cout << i << " ";
+  cout << endl;
 }
 
 int main() {
